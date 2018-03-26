@@ -1,4 +1,4 @@
-var data = [
+const data = [
 	{
 		"type": "大天使",
 		"comb": [
