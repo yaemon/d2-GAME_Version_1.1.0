@@ -1,0 +1,30 @@
+ ***  Sorry, Japanese only for license detail ***
+
+* このプログラムは 「Ｄ×２ * 真・女神転生リベレーション」というゲームの
+  公開されている情報や画像を基に、合体の手順を分かりやすくするためのツールに過ぎません
+  つまり画像や、表現されているロジックはゲームの著作権者である株式会社セガゲームス
+  および株式会社アトラスにあります。
+  ゲーム公式サイト : https://d2-megaten-l.sega.jp/
+
+* r-jp 氏の javascript である d2 https://github.com/r-jp/d2 の fork です
+
+* r-jp 氏のオリジナル部分についてのライセンスは宣言されていません
+  githum.com に公開されておられるので、常識的な Open Source
+  であると推定しました
+
+* fork 後の差分、コードについては MIT License に準ずるものとします
+  つまり、間違いがあるかもしれない・権利侵害のおそれもあるかもしれない
+  ただ現状のまま提供するだけですよ、ということです
+  MIT License 原文 : https://opensource.org/licenses/mit-license.php
+  MIT License 日本語訳 https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license
+  複製に対し著作権者を表示するときには、株式会社アトラス、株式会社セガゲームス、
+  r-jp 氏の名前及び上記の経緯がともに含まれていることを追加条項として求めます
+
+
+Copyright 2018 yaemon.the.tank@gmail.com 
+    (Original : ATLUS. Co., Ltd. , 2018 SEGA Games Co., Ltd. , https://twitter.com/R_GameJP/ )
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
