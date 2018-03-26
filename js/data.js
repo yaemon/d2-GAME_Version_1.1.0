@@ -601,6 +601,7 @@ var data = [
 			{"name": "ヴェータラ", "grade": 55, "rare": "★★★", "img": "img/vetara.png", "no": 149, "prop":["-", "弱 / 耐(防魔)", "-", "-", "-", "弱", "無"]},
 		]
 	},
+/* END_OF_NISHIN_GATTAI */
 	{
 		"type": "魔人",
 		"comb": [
