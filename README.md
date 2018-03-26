@@ -27,8 +27,8 @@ Overview
 
 ## Licence
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+[LICENSE](https://github.com/yaemon/d2/blob/GameVer_1.1.0/LICENSE)参照
 
 ## Author
 
-[tcnksm](https://github.com/tcnksm)
+[yaemon](https://github.com/yaemon/)
