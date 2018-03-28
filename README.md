@@ -26,8 +26,6 @@
 わたしが更新版を公開することはありません。  
 フォークしてデータ更新をなさることはライセンスに従い自由です
 
-* [〇〇を作るには。/ 霊鳥対応版](https://yaemon.github.io/d2/)
-
 ## Copyright
 [「Ｄ×２ * 真・女神転生リベレーション」](https://d2-megaten-l.sega.jp/) は
 [株式会社アトラス](https://www.atlus.co.jp/)、
