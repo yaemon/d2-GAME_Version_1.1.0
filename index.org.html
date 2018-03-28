@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<meta charset="utf-8">
+<meta http-equiv="Pragma" content="public">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>D×2 真・女神転生 リベレーション 「〇〇を作るには」</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet" integrity="sha384-7tIwW4quYS2+TZCwuAPnUY+dRqg28ylzlIoVXAwpfiTs+CMKsAOSsWYQ96c/ZnV+" crossorigin="anonymous">
+<link href="css/style.min.css" rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" rel="stylesheet" integrity="sha384-43pcBiAptxP/Yz6IQ9znoqO3FFOOJM3YfgHqFbfXOdU5U/OTvSPS12YxRBntlYKr" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-1.10.2.min.js" integrity="sha384-hK8q2gkBjirpIGHAH+sgqYMv6i6mfx2JVZWJ50jyYhkuEHASU6AS1UTWSo32wuGL" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.10.3/jquery-ui.min.js" integrity="sha384-NdBrHQkGhjPzZhn0Cev/LAH+zOvmTXmdqQ0tijTFgAEejVFblAdSsen/W5dPlN8v" crossorigin="anonymous"></script>
+<script src="js/data.js"></script>
+<script src="js/d2-common.js"></script>
+<script src="js/script.min.js"></script>
+<script src="js/autowrite.js"></script>
+
+<header>
+  <h1>「〇〇を作るには」(霊鳥対応版)</h1>
+	<nav>
+		<ul>
+			<li><span><img src="img/ic-index.png" alt="">〇〇を作るには</span></li>
+			<li><a href="index2.html"><img src="img/ic-index2.png" alt="">〇〇は何の素材になるか</a></li>
+			<li><a href="https://r-jp.github.io/d2/" target = "_blank"><img src=
+      "img/ic-index.png" alt="">オリジナル版(現行の合体レシピ)</a></li>
+      <li><span><a href = 
+    'https://github.com/yaemon/d2/blob/master/README.md' target="_blank"
+         ><img src="img/ic-gh.png" alt="GitHub">この霊鳥対応版について</a></li>
+		</ul>
+	</nav>
+</header>
+
+<div id="search-demon">
+	<ul id="search-info">
+		<li id="info-ic">Img</li>
+		<li id="info-name"><label for="search">Search Name :</label><input type="text" name="search" id="search" value="" placeholder="例: ジャックフロスト"><button id="search-btn" type="button">検索</button></li>
+		<li id="info-type">Type :<span>&nbsp;</span></li>
+		<li id="info-grade">Grade :<span>&nbsp;</span></li>
+		<li id="info-rare">Rare :<span>&nbsp;</span></li>
+	</ul>
+	<div id="info-prop">
+		<ul>
+			<li><img src="img/ic-prop_01.png" alt="物理:"><span>-</span></li>
+			<li><img src="img/ic-prop_02.png" alt="火炎:"><span>-</span></li>
+			<li><img src="img/ic-prop_03.png" alt="氷結:"><span>-</span></li>
+			<li><img src="img/ic-prop_04.png" alt="電撃:"><span>-</span></li>
+			<li><img src="img/ic-prop_05.png" alt="衝撃:"><span>-</span></li>
+			<li><img src="img/ic-prop_06.png" alt="破魔:"><span>-</span></li>
+			<li><img src="img/ic-prop_07.png" alt="呪殺:"><span>-</span></li>
+		</ul>
+	</div>
+	<div id="search-remove">
+		<p>除外したい組み合わせ :</p>
+		<ul>
+			<li><input type="checkbox" id="rare1"><label for="rare1">★1</label></li>
+			<li><input type="checkbox" id="rare2"><label for="rare2">★2</label></li>
+			<li><input type="checkbox" id="rare3"><label for="rare3">★3</label></li>
+			<li><input type="checkbox" id="rare4"><label for="rare4">★4</label></li>
+			<li><input type="checkbox" id="rare5"><label for="rare5">★5</label></li>
+		</ul>
+	</div>
+</div>
+
+<section id="result">
+	<h2>検索結果</h2>
+</section>
+
+<footer>
+  <a href = "https://d2-megaten-l.sega.jp/" target = "_blank"
+         ><img src="img/logo.png" alt="D2x女神転生"></a>
+  <p><small>©SEGA/©ATLUS</small></p>
+</footer>
+</html>
