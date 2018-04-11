@@ -1,5 +1,7 @@
 メガテンDx2 「〇〇を作るには」 ( 霊鳥対応版)
 ====
+[r-jp氏]: https://github.com/r-jp/
+[Game]: https://d2-megaten-l.sega.jp/
 
 ## Overview
 [「Ｄ×２ * 真・女神転生リベレーション」][Game] 実装直後に [r-jp氏] によって
@@ -26,15 +28,15 @@ stable というタグをつけて[安定版] としてダウンロード可能�
 
 対応済・対応予定の内容は[こちら](https://github.com/yaemon/d2/wiki/Known-Issues)
 
-開発版を [テスト環境](https://yaemon.github.io/d2/) から参照・利用することも
-できますが、テスト中のコードが入って挙動が不安定になる場合があります。
-
 ## Install
 外部ライブラリを参照しているのでネットワーク接続は必要ですが、
 ダウンロードしたらローカルで使うことが可能です。
 あるいはご自分のドメインで Web に貼りつけて公開されることも自由です。
 
 フォークしてデータ更新をなさることもライセンスに従い自由です
+
+開発版を [テスト環境](https://yaemon.github.io/d2/) から参照・利用することも
+できますが、テスト中のコードが入って挙動が不安定になる場合があります。
 
 ## Copyright
 [「Ｄ×２ * 真・女神転生リベレーション」][Game] は
@@ -46,10 +48,11 @@ stable というタグをつけて[安定版] としてダウンロード可能�
 [r-jp氏]によるものです。
 
 ## Contact
-改訂はデータの追加・変更に絞っているつもりですが、それでも不具合が発生することは
-ありえます。  
-不具合を見つけられたらプロジェクトの [Issue](https://github.com/yaemon/d2/issues)
+プロジェクトの [Issue](https://github.com/yaemon/d2/issues)
 からご報告いただければ確実に届きます。
+
+匿名掲示板の<q>本スレ</q>は基本読んでいません。  
+ゲームはまったり派です :-)
 
 ## Licence
 MIT License に準ずるものとします
@@ -58,5 +61,3 @@ MIT License に準ずるものとします
 [MIT License 原文](https://opensource.org/licenses/mit-license.php)  
 [MIT License 日本語訳](https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license)
 
-[r-jp氏]: https://github.com/r-jp/
-[Game]: https://d2-megaten-l.sega.jp/
