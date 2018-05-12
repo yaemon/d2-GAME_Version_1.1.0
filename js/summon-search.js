@@ -5,13 +5,11 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * $Date:$
+ * 2018-05-12.
  */
 
 const dView = {};
 dView.show = function(a) {
-	console.log("gone03 ");
-
 	if ( null == a ){
 		document.title = "〇〇を作るには";
 		return "";
@@ -28,23 +26,30 @@ dView.show = function(a) {
 		for (let e of left)
 			for (let t of right) {
 				let z = Math.floor((e.grade + t.grade) / 2 ) + 1;
-					if (lesser < z && z <= a.detail.grade)
-						x.push( {"left":e, "right":t, "price":0} );
+				if (lesser < z && z <= a.detail.grade)
+					x.push( {"left":e, "right":t, 
+						"price":church.invoice(a.detail, e, t).toLocaleString()});
 			}
 
 		if (x.length > 0) {
 			s += "<article><h3>" + pair.n1 + "<br>×<br>" + pair.n2 + "</h3>";
-			for (let e in x)
-				s += '<ul class="rare' + x[e].left.rare.length +
-				" rare" + x[e].right.rare.length + '"><li><span class="result-name">' + x[e].left.name +
-				'</span><div class="result-item"><img src="' + x[e].left.img +
-				'" alt=""><span class="result-rare">' + x[e].left.rare +
-				'</span><span class="result-grade">Grade <span class="result-grade-num">' + x[e].left.grade +
-				'</span></span></div></li><li><span class="result-name">' + x[e].right.name +
-				'</span><div class="result-item"><img src="' + x[e].right.img +
-				'" alt=""><span class="result-rare">' + x[e].right.rare +
-				'</span><span class="result-grade">Grade <span class="result-grade-num">' + x[e].right.grade +
-				"</span></span></div></li></ul>";
+			for (let e of x){
+				s += '<ul class="rare' + e.left.rare.length + " rare";
+				s	+= e.right.rare.length + '">';
+				s += '<li class ="price">' + e.price + '</li>';
+				s += '<li><span class="result-name">';
+			 	s += e.left.name + '</span><div class="result-item"><img src="';
+			 	s += e.left.img + '" alt=""><span class="result-rare">';
+				s += e.left.rare
+				s += '</span><span class="result-grade">Grade <span class="result-grade-num">';
+				s += e.left.grade + '</span></span></div></li><li><span class="result-name">';
+				s += e.right.name + '</span><div class="result-item"><img src="';
+				s += e.right.img + '" alt=""><span class="result-rare">';
+				s += e.right.rare + '</span><span class="result-grade">';
+				s += 'Grade <span class="result-grade-num">' + e.right.grade;
+				s += "</span></span></div></li>";
+				s += "</ul>";
+			}
 			s += "</article>"
 		}
 		return true;

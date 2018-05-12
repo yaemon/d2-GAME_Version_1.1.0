@@ -5,7 +5,7 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * $Date:$
+ * 2018-05-12
  */
 const dView = {};
 dView.show = function(a) {
@@ -23,10 +23,10 @@ dView.show = function(a) {
 			if (a.race.type == comb.n1){
 				rList.push({"second":comb.n2, "summon":race});
 			} else if (a.race.type == comb.n2){
-				rList.push({"second":comb.n1, "summon":race});
+					rList.push({"second":comb.n1, "summon":race});
+				}
 			}
 		}
-	}
 
 	for(let r of rList){
 		let x = [];
@@ -35,7 +35,10 @@ dView.show = function(a) {
 		while (true) {
 			if (z==0) {z = Math.floor((a.detail.grade + second.list[i].grade) / 2 ) + 1};
 			if (z <= r.summon.list[j].grade) {
-				x.push({"second":second.list[i], "summon":r.summon.list[j],"price":0});
+				x.push({"second":second.list[i], "summon":r.summon.list[j],
+					"price":church.invoice(r.summon.list[j], a.detail, second.list[i]).toLocaleString()
+				});
+				
 				z = 0, i++;
 				if (i < second.max) continue;
 				break;
@@ -47,8 +50,8 @@ dView.show = function(a) {
 		if (x.length > 0) {
 			s += "<article><h3>" + r.second + "<br>×<br>" + r.summon.type + "</h3>";
 			for (let e of x){
-				s += '<ul class="rare' + e.second.rare.length + " rare";
-				s += e.summon.rare.length + '"><li><span class="result-name">';
+				s += '<ul class="rare' + e.second.rare.length + '">';
+				s += '<li><span class="result-name">';
 				s += e.second.name + '</span><div class="result-item"><img src="';
 				s += e.second.img + '" alt=""><span class="result-rare">' + e.second.rare;
 				s += '</span><span class="result-grade">Grade <span class="result-grade-num">';
@@ -57,7 +60,9 @@ dView.show = function(a) {
 				s += e.summon.img + '" alt=""><span class="result-rare">';
 				s += e.summon.rare + '</span>';
 				s += '<span class="result-grade">Grade <span class="result-grade-num">';
-				s += e.summon.grade + "</span></span></div></li></ul>";
+				s += e.summon.grade + "</span></span></div></li>";
+				s += '<li class ="price">' + e.price + '</li>';
+				s += "</ul>";
 			}
 			s += "</article>"
 		}
@@ -75,3 +80,4 @@ dView.show = function(a) {
 
 	return a.detail.name;
 }
+// vim:ts=4:sw=4:tw=78:fenc=utf-8:ff=unix:ft=javascript:noexpandtab:nolist
