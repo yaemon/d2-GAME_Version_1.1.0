@@ -5,9 +5,8 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * $Date:$
+ * 2018-05-12.
  */
-
 var isModified = false;
 var target = "";
 
@@ -20,46 +19,49 @@ dView.setAutoComplete = function(){
 	});
 };
 
-function clean(){
+dView.clean = function(){
   $("#info-name span, #info-grade span, #info-type span, #info-rare span").text(" ");
   $("#info-ic, #result, #search").empty()
 }
 
-function change(name){
-    clean(),isModified == true && window.history.pushState(location.hash, null),
+dView.change = function(name){
+    dView.clean(),isModified == true && window.history.pushState(location.hash, null),
 		dView.show(church.searchDaemonByName(name));
 }
 
-// $(document).ready(function(){
 $(function() {
-	church.init();
-	dView.setAutoComplete();
-	var search = $("#search");
-		
  	$("head").append("<style></style>");
 
- 	$("#search-btn").click(function() {
-        "" != search.val() && search.val() != target && change(search.val());
-    }),search.keypress(function(i) {
-        13 == i.which && "" != search.val() && search.val() != target && change(search.val());
-    }), $('input[type="checkbox"]').change(function() {
-        if ($(this).prop("checked")) $("head style").append("." + $(this).attr("id") + "{display:none !important}");
-        else {
-            var a = "." + $(this).attr("id") + "{display:none !important}";
-            $("head style").html($("head style").html().replace(a, ""))
-        }
-    })
+	$('input[type="checkbox"]').change(function() {
+ 		if ($(this).prop("checked")) $("head style").append("." + $(this).attr("id") + "{display:none !important}");
+		else {
+    	var a = "." + $(this).attr("id") + "{display:none !important}";
+			$("head style").html($("head style").html().replace(a, ""))
+    }
+	});
 });
 	
 $(window).on("load hashchange", function(){
-		clean();
-		if (searchHash = location.hash.substring(3), "" != searchHash){
-			let name = dView.show(church.searchDaemonByNumber(searchHash));
-			$("#search").val(name);
-		}
+	dView.clean();
+	if (searchHash = location.hash.substring(3), "" != searchHash){
+		let name = dView.show(church.searchDaemonByNumber(searchHash));
+		$("#search").val(name);
+		isModified = true;
+	}
 }).one("load", function() {
-		isModified = true, $("#search-remove input").prop("checked", !1)
+	dView.setAutoComplete();
+	church.init();
+	var search = $("#search");
+ 	$("#search-remove input").prop("checked", !1);
+
+	$("#search-btn").click(function() {
+		"" != search.val() && search.val() != target && dView.change(search.val());
+	});
+
+	search.focus();
+
+	search.keypress(function(i) {
+		13 == i.which && "" != search.val() && search.val() != target && dView.change(search.val());
+   });
 })
-
-
 // vim:ts=4:sw=4:tw=78:fenc=utf-8:ff=unix:ft=javascript:noexpandtab:nolist
