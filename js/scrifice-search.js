@@ -34,10 +34,11 @@ dView.show = function(a) {
 		let second = church.getRaceByName(r.second)
 		while (true) {
 			if (z==0) {z = Math.floor((a.detail.grade + second.list[i].grade) / 2 ) + 1};
-			if (z <= r.summon.list[j].grade) {
-				x.push({"second":second.list[i], "summon":r.summon.list[j],
-					"price":church.invoice(r.summon.list[j], a.detail, second.list[i])})
-				});
+			if (z <= r.summon.list[j].grade){
+				x.push(
+					{"second":second.list[i], "summon":r.summon.list[j],
+					"price":church.invoice(r.summon.list[j], a.detail, second.list[i])}
+				);
 				z = 0, i++;
 				if (i < second.max) continue;
 				break;
@@ -63,7 +64,7 @@ dView.show = function(a) {
 				s += '<li class ="price">' + f.format(e.price) + '</li>';
 				s += "</ul>";
 			}
-			s += "</article>"
+			s += "</article>";
 		}
 	}
 
@@ -75,7 +76,7 @@ dView.show = function(a) {
 	$("#info-type span").text(a.race.type);
 	$("#info-rare span").text(a.detail.rare);
 	$("#result").html(s);
-	$("#info-prop li").each(function(b){$("span", this).html(a.detail.prop[b]) })
+	$("#info-prop li").each(function(b){$("span", this).html(a.detail.prop[b]) });
 
 	return a.detail.name;
 }
