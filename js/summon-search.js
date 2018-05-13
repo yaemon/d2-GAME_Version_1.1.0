@@ -5,7 +5,7 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * 2018-05-12.
+ * 2018-05-13.
  */
 
 const dView = {};
@@ -16,6 +16,7 @@ dView.show = function(a) {
 	}
 
 	var s = "<h2>検索結果</h2>";
+	var f = new Intl.NumberFormat('en-US');
 	var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
 
 	a.race.comb.forEach(function(pair){
@@ -27,8 +28,7 @@ dView.show = function(a) {
 			for (let t of right) {
 				let z = Math.floor((e.grade + t.grade) / 2 ) + 1;
 				if (lesser < z && z <= a.detail.grade)
-					x.push( {"left":e, "right":t, 
-						"price":church.invoice(a.detail, e, t).toLocaleString()});
+					x.push( {"left":e, "right":t, "price":church.invoice(a.detail, e, t)});
 			}
 
 		if (x.length > 0) {
@@ -36,7 +36,7 @@ dView.show = function(a) {
 			for (let e of x){
 				s += '<ul class="rare' + e.left.rare.length + " rare";
 				s	+= e.right.rare.length + '">';
-				s += '<li class ="price">' + e.price + '</li>';
+				s += '<li class ="price">' + f.format(e.price) + '</li>';
 				s += '<li><span class="result-name">';
 			 	s += e.left.name + '</span><div class="result-item"><img src="';
 			 	s += e.left.img + '" alt=""><span class="result-rare">';

@@ -5,7 +5,7 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * 2018-05-12
+ * 2018-05-13
  */
 const dView = {};
 dView.show = function(a) {
@@ -15,7 +15,7 @@ dView.show = function(a) {
 	}
 
 	var s = "<h2>検索結果</h2>";
-	var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
+	var f = new Intl.NumberFormat('en-US');
 
 	var rList = [];
 	for(let race of church.data){
@@ -36,9 +36,8 @@ dView.show = function(a) {
 			if (z==0) {z = Math.floor((a.detail.grade + second.list[i].grade) / 2 ) + 1};
 			if (z <= r.summon.list[j].grade) {
 				x.push({"second":second.list[i], "summon":r.summon.list[j],
-					"price":church.invoice(r.summon.list[j], a.detail, second.list[i]).toLocaleString()
+					"price":church.invoice(r.summon.list[j], a.detail, second.list[i])})
 				});
-				
 				z = 0, i++;
 				if (i < second.max) continue;
 				break;
@@ -61,7 +60,7 @@ dView.show = function(a) {
 				s += e.summon.rare + '</span>';
 				s += '<span class="result-grade">Grade <span class="result-grade-num">';
 				s += e.summon.grade + "</span></span></div></li>";
-				s += '<li class ="price">' + e.price + '</li>';
+				s += '<li class ="price">' + f.format(e.price) + '</li>';
 				s += "</ul>";
 			}
 			s += "</article>"
