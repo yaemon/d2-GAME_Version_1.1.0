@@ -57,6 +57,7 @@ church.setRaceIndex = function(){
 		church.raceIndex[church.data[i].type] = i;
 		church.data[i].max = church.data[i].list.length;
 	}
+	church.raceIndexMaked = true;
 };
 
 church.loadImages = function(){
