@@ -51,16 +51,8 @@ dView.show = function(a) {
 			s += "<article><h3>" + r.second + "<br>×<br>" + r.summon.type + "</h3>";
 			for (let e of x){
 				s += '<ul class="rare' + e.second.rare.length + '">';
-				s += '<li><span class="result-name">';
-				s += e.second.name + '</span><div class="result-item"><img src="';
-				s += e.second.img + '" alt=""><span class="result-rare">' + e.second.rare;
-				s += '</span><span class="result-grade">Grade <span class="result-grade-num">';
-				s += e.second.grade + '</span></span></div></li><li><span class="result-name">' ;
-			 	s += e.summon.name + '</span><div class="result-item"><img src="';
-				s += e.summon.img + '" alt=""><span class="result-rare">';
-				s += e.summon.rare + '</span>';
-				s += '<span class="result-grade">Grade <span class="result-grade-num">';
-				s += e.summon.grade + "</span></span></div></li>";
+				s += dView.d2liBox(e.second);
+				s += dView.d2liBox(e.summon);
 				s += '<li class ="price">' + f.format(e.price) + '</li>';
 				s += "</ul>";
 			}
