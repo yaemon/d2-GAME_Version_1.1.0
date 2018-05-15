@@ -26,7 +26,7 @@ dView.clean = function(){
 
 dView.change = function(name){
     dView.clean(),isModified == true && window.history.pushState(location.hash, null),
-		dView.show(church.searchDaemonByName(name));
+		target = dView.show(church.searchDaemonByName(name));
 }
 
 $(function() {
@@ -44,8 +44,8 @@ $(function() {
 $(window).on("load hashchange", function(){
 	dView.clean();
 	if (searchHash = location.hash.substring(3), "" != searchHash){
-		let name = dView.show(church.searchDaemonByNumber(searchHash));
-		$("#search").val(name);
+		target = dView.show(church.searchDaemonByNumber(searchHash));
+		$("#search").val(target);
 		isModified = true;
 	}
 }).one("load", function() {
