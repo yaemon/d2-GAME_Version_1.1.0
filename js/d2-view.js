@@ -52,7 +52,7 @@ $(window).on("load hashchange", function(){
 	dView.setAutoComplete();
 	church.init();
 	var search = $("#search");
- 	$("#search-remove input").prop("checked", !1);
+ 	$("#search-remove input").prop("checked", false);
 
 	$("#search-btn").click(function() {
 		"" != search.val() && search.val() != target && dView.change(search.val());
