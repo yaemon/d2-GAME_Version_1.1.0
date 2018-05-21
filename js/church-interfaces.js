@@ -42,7 +42,6 @@ church.getDaemonNames =function(){
 church.getRaceByName = function(a) {
 	if (!  church.raceIndexMaked){
 		church.setRaceIndex();
-		church.raceIndexMaked = true;
 	}
 	return church.data[church.raceIndex[a]];
 }
