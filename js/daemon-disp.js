@@ -20,5 +20,5 @@ dView.d2liBox = function(a){
 };
 
 dView.p2liBox = function(a){
-	return '<li class ="price">' + dView.priceFormat.format(a.price) + '</li>';
+	return '<li class ="price">' + dView.priceFormat.format(a) + '</li>';
 }
