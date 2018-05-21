@@ -8,6 +8,8 @@
  * 2018-05-14.
  */
 
+dView.priceFormat = new Intl.NumberFormat('en-US');
+
 dView.d2liBox = function(a){
 	return '<li><span class="result-name">' + a.name + '</span>' +
 		'<div class="result-item"><img src="' + a.img + '" alt="">' + 
@@ -16,3 +18,7 @@ dView.d2liBox = function(a){
 		a.grade + '</span></span>' +
 		'</div></li>';
 };
+
+dView.p2liBox = function(a){
+	return '<li class ="price">' + dView.priceFormat.format(a.price) + '</li>';
+}

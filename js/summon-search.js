@@ -16,7 +16,6 @@ dView.show = function(a) {
 	}
 
 	var s = "<h2>検索結果</h2>";
-	var f = new Intl.NumberFormat('en-US');
 	var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
 
 	a.race.comb.forEach(function(pair){
@@ -39,8 +38,7 @@ dView.show = function(a) {
 
 				s += dView.d2liBox(e.left);
 				s += dView.d2liBox(e.right);
-
-				s += '<li class ="price">' + f.format(e.price) + '</li>';
+				s += dView.p2liBox(e.price);
 				s += "</ul>";
 			}
 			s += "</article>"
