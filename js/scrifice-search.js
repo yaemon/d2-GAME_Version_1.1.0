@@ -15,7 +15,6 @@ dView.show = function(a) {
 	}
 
 	var s = "<h2>検索結果</h2>";
-	var f = new Intl.NumberFormat('en-US');
 
 	var rList = [];
 	for(let race of church.data){
@@ -53,7 +52,7 @@ dView.show = function(a) {
 				s += '<ul class="rare' + e.second.rare.length + '">';
 				s += dView.d2liBox(e.second);
 				s += dView.d2liBox(e.summon);
-				s += '<li class ="price">' + f.format(e.price) + '</li>';
+				s += dView.p2liBox(e.price);
 				s += "</ul>";
 			}
 			s += "</article>";
