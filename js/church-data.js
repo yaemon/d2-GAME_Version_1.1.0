@@ -13,6 +13,7 @@ church.data = [
 			{"name": "ライラ", "grade": 43, "rare": "★★★", "img": "img/raira.png", "no": 1, "prop":["-", "-", "-", "弱 / 耐(防魔)", "耐", "無", "弱"]},
 			{"name": "サンダルフォン", "grade": 61, "rare": "★★★★", "img": "img/sandarufon.png", "no": 2, "prop":["耐", "-", "-", "耐", "- / 耐(防魔)", "反", "無"]},
 			{"name": "アズラエル", "grade": 67, "rare": "★★★★", "img": "img/azuraeru.png", "no": 3, "prop":["耐", "耐", "弱", "-", "-", "反", "耐 / 無(防魔)"]},
+			{"name": "マンセマット", "grade": 83, "rare": "★★★★★", "img": "img/Mastema.png", "no": 169, "prop":["-", "弱", "無 / 反(防魔)", "-", "反", "反", " -"]},
 			{"name": "ミカエル", "grade": 90, "rare": "★★★★★", "img": "img/mikaeru.png", "no": 4, "prop":["-", "-", "無", "無", "-", "反", "弱 / 反(防魔)"]},
 			{"name": "メタトロン", "grade": 99, "rare": "★★★★★", "img": "img/metatoron.png", "no": 5, "prop":["-", "耐", "耐", "耐 / 反(防魔)", "耐", "無", "-"]},
 		]
