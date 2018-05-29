@@ -19,7 +19,7 @@
 [霊鳥対応 -安定版-]: https://github.com/yaemon/d2/releases/tag/stable
 [開発版]: https://github.com/yaemon/d2
 [テスト環境]: https://yaemon.github.io/d2/
-[合体マグ表示お試し (Game 1.2.x)]: https://github.com/yaemon/d2/releases/tag/For1.2.0-priceOnOff
+[合体マグ表示お試し (Game 1.2.x)]: https://github.com/yaemon/d2/releases/tag/PriceOnOFF-GameVer_1.2.0
 [合体マグ表示お試し (Game 1.3.x)]: https://github.com/yaemon/d2/releases/tag/For1.3.0-priceOnOff
 ### 基本方針
 [開発版]に細かい修正を加え、動作が安定して満足のいくようになったとき  
