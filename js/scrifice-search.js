@@ -47,7 +47,7 @@ dView.show = function(a) {
 			break;
 		}
 		if (x.length > 0) {
-			s += "<article><h3>" + r.second + "<br>×<br>" + r.summon.type + "</h3>";
+			s += '<article class="sozai-search"><h3>' + r.second + "<br>×<br>" + r.summon.type + "</h3>";
 			for (let e of x){
 				s += '<ul class="rare' + e.second.rare.length + '">';
 				s += dView.d2liBox(e.second, "+");
