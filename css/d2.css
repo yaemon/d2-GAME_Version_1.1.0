@@ -14,7 +14,8 @@
         image-rendering:-webkit-optimize-contrast
     }
     #info-ic img{
-        width:inherit
+        width:inherit;
+        height:auto;
     }
     body,header{
         background:#000
