@@ -18,7 +18,7 @@
 ## Version
 [開発版]: https://github.com/yaemon/d2
 [テスト環境]: https://yaemon.github.io/d2/
-[合体マグ表示お試し (6月22日以前)]: https://github.com/yaemon/d2/releases/tag/For1.3.0-priceOnOff
+[合体マグ表示お試し (Game ver.1.4.0)]: https://github.com/yaemon/d2/releases/tag/PriceOnOFF-GameVer_1.4.0
 [合体マグ表示お試し (6月22日以降)]: https://github.com/yaemon/d2/releases/tag/20180621
 ### 基本方針
 [開発版]に細かい修正を加え、動作が安定して満足のいくようになったとき  
@@ -45,6 +45,7 @@ stable またはそれに類するタグをつけて[安定版] として
 機能提供、お試しということで。宜しければ以下からダウンロードしてお使いください。
 
 * [合体マグ表示お試し (6月22日以降)] ← キングフロスト対応
+* [合体マグ表示お試し (Game ver.1.4.0)] ← 種族：龍神対応
 
 ## Install
 外部ライブラリを参照しているのでネットワーク接続は必要ですが、
