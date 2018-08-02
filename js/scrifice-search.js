@@ -5,61 +5,73 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * 2018-05-13
  */
 const dView = {};
 dView.show = function(a) {
-	if ( null == a ){
+	var s;
+	if (null == a){
 		document.title = "〇〇は何の素材になるか";
+		history.replaceState("", "", location.hash="");
 		return "";
 	}
-
-	var s = "<h2>検索結果</h2>";
-
-	var rList = [];
-	for(let race of church.data){
-		for(let comb of race.comb){
-			if (a.race.type == comb.n1){
-				rList.push({"second":comb.n2, "summon":race});
-			} else if (a.race.type == comb.n2){
-					rList.push({"second":comb.n1, "summon":race});
+	if (null != a.notFound){
+		document.title = a.notFound + " が分かりません";
+		history.replaceState("", "", location.hash="#NotFound");
+		return "";
+	}
+	if (null == a.race.comb){
+		document.title = a.detail.name + " は二身合体に使えません";
+		s = "<h2>未実装</h2>";
+		s += "<p>" + a.race.Message + "</p>";
+	}
+	else
+	{
+		document.title = a.detail.name + "は何の素材になるか";
+		s = "<h2>検索結果</h2>";
+		var rList = [];
+		for(let race of church.data){
+			if (null == race.comb){continue;}
+			for(let comb of race.comb){
+				if (a.race.type == comb.n1){
+					rList.push({"second":comb.n2, "summon":race});
+				} else if (a.race.type == comb.n2){
+						rList.push({"second":comb.n1, "summon":race});
 				}
 			}
 		}
-
-	for(let r of rList){
-		let x = [];
-		let i = 0, j = 0, z =0;
-		let second = church.getRaceByName(r.second)
-		while (true) {
-			if (z==0) {z = Math.floor((a.detail.grade + second.list[i].grade) / 2 ) + 1};
-			if (z <= r.summon.list[j].grade){
-				x.push(
-					{"second":second.list[i], "summon":r.summon.list[j],
-					"price":church.invoice(r.summon.list[j], a.detail, second.list[i])}
-				);
-				z = 0, i++;
-				if (i < second.max) continue;
+		for(let r of rList){
+			let x = [];
+			let i = 0, j = 0, z =0;
+			let second = church.getRaceByName(r.second)
+			while (true) {
+				if (z==0) {z = Math.floor((a.detail.grade + second.list[i].grade) / 2 ) + 1};
+				if (z <= r.summon.list[j].grade){
+					x.push(
+						{"second":second.list[i], "summon":r.summon.list[j],
+						"price":church.invoice(r.summon.list[j], a.detail, second.list[i])}
+					);
+					z = 0, i++;
+					if (i < second.max) continue;
+					break;
+				}
+				j++;
+				if (j < r.summon.max) continue;
 				break;
 			}
-			j++;
-			if (j < r.summon.max) continue;
-			break;
-		}
-		if (x.length > 0) {
-			s += '<article class="sozai-search"><h3>' + r.second + "<br>×<br>" + r.summon.type + "</h3>";
-			for (let e of x){
-				s += '<ul class="rare' + e.second.rare.length + '">';
-				s += dView.d2liBox(e.second, "+");
-				s += dView.d2liBox(e.summon, "=");
-				s += dView.p2liBox(e.price);
-				s += "</ul>";
+			if (x.length > 0) {
+				s += '<article class="sozai-search"><h3>' + r.second + "<br>×<br>" + r.summon.type + "</h3>";
+				for (let e of x){
+					s += '<ul class="rare' + e.second.rare.length + '">';
+					s += dView.d2liBox(e.second, "+");
+					s += dView.d2liBox(e.summon, "=");
+					s += dView.p2liBox(e.price);
+					s += "</ul>";
+				}
+				s += "</article>";
 			}
-			s += "</article>";
 		}
 	}
 
-	document.title = a.detail.name + "は何の素材になるか";
 	history.replaceState("", "", "#no" + a.detail.no);
 	$("#info-ic").html('<img src="' + a.detail.img + '" alt="">');
 	$("#info-name span").text(a.detail.name);

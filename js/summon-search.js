@@ -5,7 +5,6 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * 2018-05-13.
  */
 
 const dView = {};
