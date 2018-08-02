@@ -1,4 +1,4 @@
-メガテンDx2 「〇〇を作るには」 ( 霊鳥対応版)
+メガテンDx2 「〇〇を作るには」 ( データ改訂版)
 ====
 [r-jp氏]: https://github.com/r-jp/
 [Game]: https://d2-megaten-l.sega.jp/
