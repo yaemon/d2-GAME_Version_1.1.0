@@ -25,8 +25,10 @@ dView.clean = function(){
 }
 
 dView.change = function(name){
-    dView.clean(),isModified == true && window.history.pushState(location.hash, null),
-		target = dView.show(church.searchDaemonByName(name));
+    dView.clean(),isModified == true &&
+		/* window.history.pushState(location.hash, null), */
+		window.history.pushState(name, null), // use name as dummy value.
+		dView.show(church.searchDaemonByName(name));
 }
 
 $(function() {

@@ -20,7 +20,7 @@ church.searchDaemonByName = function(a) {
 		for (let t in church.data[e].list)
 			if (a == church.data[e].list[t].name)
 				return {"race":church.data[e], "rank":t, "detail":church.data[e].list[t]};
-	return null;
+	return {"notFound": a};
 }
 
 church.searchDaemonByNumber = function(a) {
@@ -43,7 +43,7 @@ church.getRaceByName = function(a) {
 	if (!  church.raceIndexMaked){
 		church.setRaceIndex();
 	}
-	return church.data[church.raceIndex[a]];
+	return (church.data[church.raceIndex[a]]);
 }
 
 // For filescope.
