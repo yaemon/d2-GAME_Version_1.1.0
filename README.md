@@ -18,21 +18,26 @@
 ## Version
 [開発版]: https://github.com/yaemon/d2
 [テスト環境]: https://yaemon.github.io/d2/
+[リリース一覧]: https://github.com/yaemon/d2/releases
 [合体マグ表示お試し (Game ver.1.4.0)]: https://github.com/yaemon/d2/releases/tag/PriceOnOFF-GameVer_1.4.0_fix
-[合体マグ表示お試し (Game ver.1.4.1)]: https://github.com/yaemon/d2/releases/tag/POO-Game141-pre01
+[合体マグ表示お試し (Game ver.1.4.1)]: https://github.com/yaemon/d2/releases/tag/POO-Game141-pre02
 ### 基本方針
-[開発版]に細かい修正を加え、動作が安定して満足のいくようになったとき  
-stable またはそれに類するタグをつけて[安定版] として
-ダウンロード可能なようにしたいと思っています.
+[開発版] に細かい修正を加え、動作が安定して満足のいくようになったとき  
+stable またはそれに類するタグをつけて[リリース一覧] より
+ダウンロード可能なようにします。
+
+[テスト環境] は開発途中のデータやコードが参照されます。
+開発途中には動作が不安定になることがあるとご承知願います。
 
 * [開発版]
+* [リリース一覧]
 * [テスト環境]
 
 対応済・対応予定の内容は[こちら](https://github.com/yaemon/d2/wiki/Known-Issues)
 
-2018年8月現在、ゲームに対応する安定版はありません。下記暫定版をお使いください
+2018年8月現在、ゲームに対応するリリースは、下記の暫定版のみが公開されています。
 
-### 暫定措置
+### 暫定版
 開発版、テスト環境では、いま素体以外での合体マグを計算して表示していますが、
 しょうじき自分でも見にくい。
 
@@ -42,7 +47,8 @@ stable またはそれに類するタグをつけて[安定版] として
 挙動そのものは安定しています。
 合体マグも、わたしが調べられた範囲では間違っていないようです。
 
-機能提供、お試しということで。宜しければ以下からダウンロードしてお使いください。
+機能提供、お試しということで。
+[リリース一覧] からダウンロード可能です
 
 * [合体マグ表示お試し (Game ver.1.4.1)] ← ザオウゴンゲンの仮置きデータ入り
 * [合体マグ表示お試し (Game ver.1.4.0)] ← 種族：龍神対応
@@ -77,6 +83,8 @@ stable またはそれに類するタグをつけて[安定版] として
 MIT License に準ずるものとします
 つまり、間違いがあるかもしれない・権利侵害のおそれもあるかもしれない
 ただ現状のまま提供するだけで何ら保証/補償しませんよ、ということです  
+
 [MIT License 原文](https://opensource.org/licenses/mit-license.php)  
+
 [MIT License 日本語訳](https://ja.osdn.net/projects/opensource/wiki/licenses%2FMIT_license)
 
