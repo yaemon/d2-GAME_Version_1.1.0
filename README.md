@@ -18,8 +18,8 @@
 ## Version
 [開発版]: https://github.com/yaemon/d2
 [テスト環境]: https://yaemon.github.io/d2/
-[合体マグ表示お試し (Game ver.1.4.0)]: https://github.com/yaemon/d2/releases/tag/PriceOnOFF-GameVer_1.4.0
-[合体マグ表示お試し (6月22日以降)]: https://github.com/yaemon/d2/releases/tag/20180621
+[合体マグ表示お試し (Game ver.1.4.0)]: https://github.com/yaemon/d2/releases/tag/PriceOnOFF-GameVer_1.4.0_fix
+[合体マグ表示お試し (Game ver.1.4.1)]: https://github.com/yaemon/d2/releases/tag/POO-Game141-pre01
 ### 基本方針
 [開発版]に細かい修正を加え、動作が安定して満足のいくようになったとき  
 stable またはそれに類するタグをつけて[安定版] として
@@ -30,7 +30,7 @@ stable またはそれに類するタグをつけて[安定版] として
 
 対応済・対応予定の内容は[こちら](https://github.com/yaemon/d2/wiki/Known-Issues)
 
-2018年6月現在、ゲームに対応する安定版はありません。下記暫定版をお使いください
+2018年8月現在、ゲームに対応する安定版はありません。下記暫定版をお使いください
 
 ### 暫定措置
 開発版、テスト環境では、いま素体以外での合体マグを計算して表示していますが、
@@ -44,7 +44,7 @@ stable またはそれに類するタグをつけて[安定版] として
 
 機能提供、お試しということで。宜しければ以下からダウンロードしてお使いください。
 
-* [合体マグ表示お試し (6月22日以降)] ← キングフロスト対応
+* [合体マグ表示お試し (Game ver.1.4.1)] ← ザオウゴンゲンの仮置きデータ入り
 * [合体マグ表示お試し (Game ver.1.4.0)] ← 種族：龍神対応
 
 ## Install
