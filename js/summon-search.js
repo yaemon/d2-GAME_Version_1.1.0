@@ -21,13 +21,13 @@ dView.show = function(a) {
 		return "";
 	}
 	if (null == a.race.comb){
+		dView.Conditions.Hidden();
 		if (null == a.detail.union){
 			document.title = a.detail.name + " は作れません"
 			s = "<h2>未実装</h2>",
 			s += '<div id = "message">',
 			s	+= "<p>" + a.race.type + "を合体で作成する方法は提供されていません</p>",
 			s += '</div>';
-			dView.Conditions.Hidden();
 		}
 		else{
 			document.title = a.detail.name + "を作るには";
