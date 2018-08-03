@@ -23,8 +23,11 @@ dView.show = function(a) {
 	if (null == a.race.comb){
 		if (null == a.detail.union){
 			document.title = a.detail.name + " は作れません"
-			s = "<h2>未実装</h2>";
-			s += "<p>" + a.race.type + "を合体で作成する方法は提供されていません</p>";
+			s = "<h2>未実装</h2>",
+			s += '<div id = "message">',
+			s	+= "<p>" + a.race.type + "を合体で作成する方法は提供されていません</p>",
+			s += '</div>';
+			dView.Conditions.Hidden();
 		}
 		else{
 			document.title = a.detail.name + "を作るには";
@@ -41,9 +44,12 @@ dView.show = function(a) {
 	}
 	else
 	{
+		//dView.ConditionsShow();
 		document.title = a.detail.name + "を作るには";
 		s = "<h2>検索結果</h2>";
 		var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
+		var rareTarget = a.detail.rare.length;
+		var rareTargetW = 2 * rareTarget;
 
 		a.race.comb.forEach(function(pair){
 			var x = [];
@@ -60,8 +66,21 @@ dView.show = function(a) {
 			if (x.length > 0) {
 				s += "<article><h3>" + pair.n1 + "<br>×<br>" + pair.n2 + "</h3>";
 				for (let e of x){
-					s += '<ul class="rare' + e.left.rare.length + " rare";
-					s += e.right.rare.length + '">';
+					var rareL = e.left.rare.length;
+					var rareR = e.right.rare.length;
+
+					var priceClass = " pStd";
+					{
+						var rareUp = rareTargetW - rareL - rareR;
+						if (1 == rareUp) priceClass = " pHalf";
+						else if (1 < rareUp) priceClass = " pMax";
+					}
+					var downGrade = ""
+					if (rareTarget < rareL || rareTarget < rareR) downGrade = " down";
+
+					s += '<ul class="',
+					s	+= "rare" + rareL + " rare" + rareR + priceClass + downGrade,
+					s += '">';
 
 					s += dView.d2liBox(e.left);
 					s += dView.d2liBox(e.right);

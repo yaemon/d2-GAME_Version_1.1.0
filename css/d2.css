@@ -396,12 +396,18 @@
         font-size:var(--font12);
         text-align:center
     }
-    footer img,footer small{
-        display:inline-block;
-        vertical-align:top
-    }
     #result ul li:nth-child(even){
         margin-left:10px
+    }
+    #message{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-top:15px
+    }
+    #message p{
+        margin:0 15px 0 0;
+        color:#fff
     }
     footer{
         display:flex;
@@ -411,6 +417,10 @@
         color:#fff;
         font-size:var(--font11);
         align-items:center
+    }
+    footer img,footer small{
+        display:inline-block;
+        vertical-align:top
     }
     footer p{
         margin:0 .5em 0 1.5em

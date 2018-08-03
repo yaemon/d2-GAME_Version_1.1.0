@@ -21,14 +21,19 @@ dView.show = function(a) {
 	}
 	if (null == a.race.comb){
 		document.title = a.detail.name + " は二身合体に使えません";
-		s = "<h2>未実装</h2>";
-		s += "<p>" + a.race.type + "は素材になりません</p>";
+		s = "<h2>未実装</h2>",
+		s += '<div id = "message">',
+		s += '<p>' + a.race.type + "は素材になりません</p>",
+		s += '</div>';
+		dView.Conditions.Hidden();
 	}
 	else
 	{
 		document.title = a.detail.name + "は何の素材になるか";
 		s = "<h2>検索結果</h2>";
 		var rList = [];
+		var rareTarget = a.detail.rare.length;
+
 		for(let race of church.data){
 			if (null == race.comb){continue;}
 			for(let comb of race.comb){
@@ -61,7 +66,22 @@ dView.show = function(a) {
 			if (x.length > 0) {
 				s += '<article class="sozai-search"><h3>' + r.second + "<br>×<br>" + r.summon.type + "</h3>";
 				for (let e of x){
-					s += '<ul class="rare' + e.second.rare.length + '">';
+					var rareSecond = e.second.rare.length;
+					var rareSummon = e.summon.rare.length;
+
+					var priceClass = " pStd";
+					{
+						var rareUp = rareSummon *2 - rareTarget - rareSecond;
+						if (1 == rareUp) priceClass = " pHalf";
+						else if (1 < rareUp) priceClass = " pMax";
+					}
+					var downGrade = ""
+					if (rareTarget > rareSummon) downGrade = " down";
+
+					s += '<ul class="',
+					s	+= "rare" + rareSecond + priceClass + downGrade,
+					s += '">';
+
 					s += dView.d2liBox(e.second, "+");
 					s += dView.d2liBox(e.summon, "=");
 					s += dView.p2liBox(e.price);
