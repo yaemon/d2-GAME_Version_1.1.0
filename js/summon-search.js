@@ -28,7 +28,7 @@ dView.show = function(a) {
 		}
 		else{
 			s = "<h2>検索結果</h2>";
-			s += "<article><h3>" +  "多身合体" + "</h3>";
+			s += "<article><h3>" +  "多身<br /><br />　合体" + "</h3>";
 			s += '<ul>';
 			for (let e of a.detail.union){
 				tmp = church.searchDaemonByNumber(e);

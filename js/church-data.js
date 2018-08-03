@@ -674,9 +674,9 @@ church.data = [
 		"list": [
 			{"name": "ジークフリード", "grade": 83, "rare": "★★★★★", "img": "img/jikufurido.png", "no": 153, 
 				"prop":["吸", "-", "-", "-", "- / 耐(防魔)", "-", "-"]},
-			{"name": "ジャンヌ・ダルク", "grade": 78, "rare": "★★★★", "img": "", "no": 170, 
+			{"name": "ジャンヌ・ダルク", "grade": 78, "rare": "★★★★", "img": "img/JeanneDArc.png", "no": 170, 
 				"prop":["-", "弱 / 反(防)", "耐", "耐", "耐", "-", "-"]},
-			{"name": "コウテイ", "grade": 88, "rare": "★★★★★", "img": "", "no": 171, 
+			{"name": "コウテイ", "grade": 88, "rare": "★★★★★", "img": "img/Kote.png", "no": 171, 
 				"prop":["-", "耐", "耐", "耐", "耐", "- / 反(防魔)", "-"]},
 			{"name": "ヨシツネ", "grade": 97, "rare": "★★★★★", "img": "img/yoshitsune.png", "no": 154, 
 				"prop":["耐 / 吸(防魔)", "-", "-", "-", "-", "無", "無"]},
@@ -685,11 +685,11 @@ church.data = [
 	{
 		"type": "珍獣",
 		"list": [
-			{"name": "チュパカブラ", "grade": 15, "rare": "★", "img": "", "no": 156,
+			{"name": "チュパカブラ", "grade": 15, "rare": "★", "img": "img/Chupacabra.png", "no": 156,
 				"prop":["-", "-", "-", "弱 / 耐(防魔)", "-", "-", "-"],
-				"union":[130, 90, 123],
+				"union":[130, 89, 123],
 				"price":100},
-			{"name": "イナバノシロウサギ", "grade": 41, "rare": "★★★", "img": "", "no": 157,
+			{"name": "イナバノシロウサギ", "grade": 41, "rare": "★★★", "img": "img/InabanoShirousagi.png", "no": 157,
 				"prop":["-", "弱 / 無(防魔)", "-", "-", "-", "-", "-"],
 				"union":[76, 112, 20],
 				"price":5000},
@@ -698,7 +698,7 @@ church.data = [
 	{
 		"type": "怪異",
 		"list": [
-			{"name": "かみおとこ", "grade": 25, "rare": "★★", "img": "", "no": 155,
+			{"name": "かみおとこ", "grade": 25, "rare": "★★", "img": "img/Kamiotoko.png", "no": 155,
 				"prop":["-", "-", "-", "-", "- / 無(防魔)", "弱", "反"],
 				"union":[131, 144, 145],
 				"price":500},
@@ -708,15 +708,15 @@ church.data = [
 	{
 		"type": "秘神",
 		"list": [
-			{"name": "カンバリ", "grade": 30, "rare": "★★", "img": "", "no": 158,
+			{"name": "カンバリ", "grade": 30, "rare": "★★", "img": "img/Kambari.png", "no": 158,
 				"prop":["弱", "- / 耐(防魔)", "-", "-", "-", "耐", "弱"],
 				"union":[75, 62, 104, 30],
 				"price":100},
-			{"name": "キンマモン", "grade": 55, "rare": "★★★", "img": "", "no": 159,
+			{"name": "キンマモン", "grade": 55, "rare": "★★★", "img": "img/Kinmamon.png", "no": 159,
 				"prop":["-", "無", "弱", "-", "-", "耐", "耐 / 無(防魔)"],
 				"union":[24, 147, 127, 119],
 				"price":10000},
-			{"name": "カーマ", "grade": 75, "rare": "★★★★", "img": "", "no": 160,
+			{"name": "カーマ", "grade": 75, "rare": "★★★★", "img": "img/Kāmadeva.png", "no": 160,
 				"prop":["耐", "弱 / 反(防魔)", "-", "-", "-", "耐", "-"],
 				"union":[105, 14, 107, 108],
 				"price":200000},
@@ -725,7 +725,7 @@ church.data = [
 	{
 		"type": "狂神",
 		"list": [
-			{"name": "アティス", "grade": 65, "rare": "★★★★", "img": "", "no": 167,
+			{"name": "アティス", "grade": 65, "rare": "★★★★", "img": "img/Attis.png", "no": 167,
 				"prop":["耐", "-", "- / 無(防魔)", "-", "-", "-", "-"],
 				"union":[118, 7, 43, 101],
 				"price":200000},
@@ -734,7 +734,7 @@ church.data = [
 	{
 		"type": "威霊",
 		"list": [
-			{"name": "アリラト", "grade": 85, "rare": "★★★★★", "img": "", "no": 168,
+			{"name": "アリラト", "grade": 85, "rare": "★★★★★", "img": "img/Al-Lat.png", "no": 168,
 				"prop":["耐 / 無(防魔)", "-", "-", "-", "-", "耐", "耐"],
 				"union":[41, 42, 2, 3],
 				"price":500000},
