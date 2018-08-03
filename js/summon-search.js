@@ -21,9 +21,22 @@ dView.show = function(a) {
 		return "";
 	}
 	if (null == a.race.comb){
-		document.title = a.detail.name + " は二身合体で作れません"
-		s = "<h2>未実装</h2>";
-		s += "<p>" + a.race.Message + "</p>";
+		if (null == a.detail.union){
+			document.title = a.detail.name + " は作れません"
+			s = "<h2>未実装</h2>";
+			s += "<p>" + a.race.type + "を合体で作成する方法は提供されていません</p>";
+		}
+		else{
+			s = "<h2>検索結果</h2>";
+			s += "<article><h3>" +  "多身合体" + "</h3>";
+			s += '<ul>';
+			for (let e of a.detail.union){
+				tmp = church.searchDaemonByNumber(e);
+				s += dView.d2liBox(tmp.detail);
+			}
+			s += dView.p2liBox(a.detail.price);
+			s += '</ul>';
+		}
 	}
 	else
 	{
@@ -70,3 +83,4 @@ dView.show = function(a) {
 
 	return a.detail.name;
 };
+// vim:ts=4:sw=4:tw=78:fenc=utf-8:ff=unix:ft=javascript:noexpandtab:nolist

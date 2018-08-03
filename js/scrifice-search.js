@@ -22,7 +22,7 @@ dView.show = function(a) {
 	if (null == a.race.comb){
 		document.title = a.detail.name + " は二身合体に使えません";
 		s = "<h2>未実装</h2>";
-		s += "<p>" + a.race.Message + "</p>";
+		s += "<p>" + a.race.type + "は素材になりません</p>";
 	}
 	else
 	{
