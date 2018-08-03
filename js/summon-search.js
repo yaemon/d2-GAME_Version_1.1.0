@@ -27,6 +27,7 @@ dView.show = function(a) {
 			s += "<p>" + a.race.type + "を合体で作成する方法は提供されていません</p>";
 		}
 		else{
+			document.title = a.detail.name + "を作るには";
 			s = "<h2>検索結果</h2>";
 			s += "<article><h3>" +  "多身<br /><br />　合体" + "</h3>";
 			s += '<ul>';
