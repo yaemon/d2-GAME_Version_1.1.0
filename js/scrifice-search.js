@@ -25,7 +25,7 @@ dView.show = function(a) {
 		s += '<div id = "message">',
 		s += '<p>' + a.race.type + "は素材になりません</p>",
 		s += '</div>';
-		dView.Conditions.Hidden();
+		dView.Conditions.Hide();
 	}
 	else
 	{
@@ -69,17 +69,8 @@ dView.show = function(a) {
 					var rareSecond = e.second.rare.length;
 					var rareSummon = e.summon.rare.length;
 
-					var priceClass = " pStd";
-					{
-						var rareUp = rareSummon *2 - rareTarget - rareSecond;
-						if (1 == rareUp) priceClass = " pHalf";
-						else if (1 < rareUp) priceClass = " pMax";
-					}
-					var downGrade = ""
-					if (rareTarget > rareSummon) downGrade = " down";
-
 					s += '<ul class="',
-					s	+= "rare" + rareSecond + priceClass + downGrade,
+					s	+= "rare" + rareSecond + " get" + rareSummon,
 					s += '">';
 
 					s += dView.d2liBox(e.second, "+");

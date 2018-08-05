@@ -21,7 +21,7 @@ dView.setAutoComplete = function(){
 dView.Conditions = {};
 dView.Conditions.Flag = true;
 dView.Conditions.Word = '#search-remove';
-dView.Conditions.Hidden = function(){
+dView.Conditions.Hide = function(){
 	if (true == dView.Conditions.Flag){
 		$("head style").append(dView.Conditions.Word + "{display:none !important}");
 		dView.Conditions.Flag = false;
@@ -59,7 +59,7 @@ $(window).on("load hashchange", function(){
 	dView.setAutoComplete();
 	church.init();
 	var search = $("#search");
- 	$("#search-remove input").prop("checked", !1);
+ 	$("#search-remove input").prop("checked", false);
 
 	$("#search-btn").click(function() {
 		"" != search.val() && search.val() != target && dView.change(search.val());

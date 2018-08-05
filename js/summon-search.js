@@ -21,7 +21,7 @@ dView.show = function(a) {
 		return "";
 	}
 	if (null == a.race.comb){
-		dView.Conditions.Hidden();
+		dView.Conditions.Hide();
 		if (null == a.detail.union){
 			document.title = a.detail.name + " は作れません"
 			s = "<h2>未実装</h2>",
@@ -75,11 +75,10 @@ dView.show = function(a) {
 						if (1 == rareUp) priceClass = " pHalf";
 						else if (1 < rareUp) priceClass = " pMax";
 					}
-					var downGrade = ""
-					if (rareTarget < rareL || rareTarget < rareR) downGrade = " down";
+
 
 					s += '<ul class="',
-					s	+= "rare" + rareL + " rare" + rareR + priceClass + downGrade,
+					s	+= "rare" + rareL + " rare" + rareR + priceClass,
 					s += '">';
 
 					s += dView.d2liBox(e.left);
