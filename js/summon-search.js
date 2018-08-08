@@ -48,8 +48,7 @@ dView.show = function(a) {
 		document.title = a.detail.name + "を作るには";
 		s = "<h2>検索結果</h2>";
 		var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
-		var rareTarget = a.detail.rare.length;
-		var rareTargetW = 2 * rareTarget;
+		var rareTargetW = 2 * a.detail.rare.length;
 
 		a.race.comb.forEach(function(pair){
 			var x = [];
