@@ -75,7 +75,7 @@ dView.show = function(a) {
 
 					s += dView.d2liBox(e.second, "+");
 					s += dView.d2liBox(e.summon, "=");
-					s += dView.p2liBox(e.price);
+					s += dView.p2liBox(e.price, rareSummon);
 					s += "</ul>";
 				}
 				s += "</article>";

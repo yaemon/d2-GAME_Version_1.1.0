@@ -48,7 +48,8 @@ dView.show = function(a) {
 		document.title = a.detail.name + "を作るには";
 		s = "<h2>検索結果</h2>";
 		var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
-		var rareTargetW = 2 * a.detail.rare.length;
+		var rareTarget = a.detail.rare.length;
+		var rareTargetW = 2 * rareTarget;
 
 		a.race.comb.forEach(function(pair){
 			var x = [];
@@ -82,7 +83,7 @@ dView.show = function(a) {
 
 					s += dView.d2liBox(e.left);
 					s += dView.d2liBox(e.right);
-					s += dView.p2liBox(e.price);
+					s += dView.p2liBox(e.price, rareTarget);
 					s += "</ul>";
 				}
 				s += "</article>"

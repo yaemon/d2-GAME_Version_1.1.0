@@ -20,6 +20,9 @@ dView.d2liBox = function(a, b){
 		'</div></li>';
 };
 
-dView.p2liBox = function(a){
-	return '<li class ="price">' + dView.priceFormat.format(a) + '</li>';
+dView.p2liBox = function(a, b){
+	var basePrice = (typeof b == 'undefined') ? "" : 	(b < 4 )? "" : (b == 4)? 
+		"<br />" + dView.priceFormat.format(Math.ceil(a / 2)) : (b ==5)?
+		"<br />" + dView.priceFormat.format(Math.ceil(a * 0.7)) : "Error";
+	return '<li class ="price">' + dView.priceFormat.format(a) + basePrice +'</li>';
 }
