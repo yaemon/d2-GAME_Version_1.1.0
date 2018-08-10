@@ -8,20 +8,27 @@
  */
 
 const dView = {};
+dView.showFlags = [
+	"pStd", "pHalf", "pMax", 
+	"rare1", "rare2", "rare3", "rare4", "rare5",
+];
+
 dView.show = function(a) {
 	var s;
+	var r = {"name":"", "no":0, "hideCondition":false};
 	if (null == a){
 		document.title = "〇〇を作るには";
 		history.replaceState("", "", location.hash="");
-		return "";
+		return r;
 	}
 	if (null != a.notFound){
 		document.title = a.notFound + " が分かりません";
 		history.replaceState("", "", location.hash="#NotFound");
-		return "";
+		return r;
 	}
+	r = {"name":a.detail.name, "no":a.detail.no, "hideCondition":false};
 	if (null == a.race.comb){
-		dView.Conditions.Hide();
+		r.hideCondition = true;
 		if (null == a.detail.union){
 			document.title = a.detail.name + " は作れません"
 			s = "<h2>未実装</h2>",
@@ -44,7 +51,6 @@ dView.show = function(a) {
 	}
 	else
 	{
-		//dView.ConditionsShow();
 		document.title = a.detail.name + "を作るには";
 		s = "<h2>検索結果</h2>";
 		var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
@@ -76,7 +82,6 @@ dView.show = function(a) {
 						else if (1 < rareUp) priceClass = " pMax";
 					}
 
-
 					s += '<ul class="',
 					s	+= "rare" + rareL + " rare" + rareR + priceClass,
 					s += '">';
@@ -91,7 +96,6 @@ dView.show = function(a) {
 			return true;
 		});
 	}
-	history.replaceState("", "", "#no" + a.detail.no);
 	$("#info-ic").html('<img src="' + a.detail.img + '" alt="">');
 	$("#info-name span").text(a.detail.name);
 	$("#info-grade span").text(a.detail.grade);
@@ -100,6 +104,6 @@ dView.show = function(a) {
 	$("#result").html(s);
 	$("#info-prop li").each(function(b){$("span", this).html(a.detail.prop[b]) })
 
-	return a.detail.name;
+	return r;
 };
 // vim:ts=4:sw=4:tw=78:fenc=utf-8:ff=unix:ft=javascript:noexpandtab:nolist

@@ -225,37 +225,43 @@
         border:1px solid #000;
         image-rendering:crisp-edges
     }
-    #search-remove{
+    .search-remove{
         display:flex;
         align-items:center;
         justify-content:center;
         margin-top:15px
     }
-    #search-remove p{
+    .search-remove dt{
         margin:0 15px 0 0;
         color:#fff
     }
-    #search-remove ul{
+    .search-remove dt:after{
+        content: " :";
+    }
+    .search-remove dd{
+        margin: 0 0px;
+    }
+    .search-remove ul{
         display:flex;
         justify-content:center;
         line-height:1
     }
-    #search-remove li{
+    .search-remove li{
         width:2.8em;
         height:1.9em;
         color:#fff;
         font-size:var(--font13);
         line-height:1.9
     }
-    #search-remove li+li{
+    .search-remove li+li{
         margin-left:8px
     }
-    #search-remove input[type=checkbox]{
+    .search-remove input[type=checkbox]{
         display:none;
         margin-right:3px;
         vertical-align:top
     }
-    #search-remove label{
+    .search-remove label{
         display:block;
         height:1.9em;
         padding-left:1px;
@@ -263,7 +269,7 @@
         letter-spacing:1px;
         cursor:pointer
     }
-    #search-remove input:checked+label{
+    .search-remove input:checked+label{
         opacity:.4
     }
     #search-howto{
@@ -518,11 +524,11 @@
             margin-right:.5em;
             font-size:var(--font11)
         }
-        #search-remove{
+        .search-remove{
             flex-wrap:wrap;
             margin-top:10px
         }
-        #search-remove p{
+        .search-remove dt p{
             width:100%;
             margin-bottom:.4em;
             padding-right:10px;

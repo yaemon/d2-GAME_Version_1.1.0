@@ -7,6 +7,10 @@
  *
  */
 const dView = {};
+dView.showFlags = [
+	"rare1", "rare2", "rare3", "rare4", "rare5",
+	"get1", "get2", "get3", "get4", "get5",
+];
 dView.show = function(a) {
 	var s;
 	if (null == a){
