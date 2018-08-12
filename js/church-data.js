@@ -1,3 +1,11 @@
+church.version = 
+	{
+		"Last modified" : "2018-08-13",
+		"Last maintainer" : "yaemon",
+		"Game Version" : "1.4.1 (ザオウゴンゲン実装)",
+		"OneLiner" : "(Game Version 1.4.1 対応)", // 検索画面に表示される
+	};
+
 church.data = [
 	{
 		"type": "大天使",

@@ -57,6 +57,7 @@ $(function(){
 
 dView.Status.init = function(){
 	dView.Status.detail = new vSecretary(mode);
+	$("#copyright").append ( " " +  church.version.OneLiner );
 };
 
 dView.Status.flags = function(){
