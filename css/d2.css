@@ -416,8 +416,12 @@
        // background:rgba(0,0,0,.4);
         color:#fff;
         // font-size:var(--font12);
-        text-align:center
+        text-align:center;
+        cursor:pointer;
     }
+		.memo{
+			display:none;
+		}
     #message{
         display:flex;
         align-items:center;

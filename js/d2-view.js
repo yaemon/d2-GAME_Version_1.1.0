@@ -35,9 +35,9 @@ $(window).one("load", function(){
 		"" != search.val() && dView.Status.change(search.val());
 	});
 
-	$(".result-item li").click(function(){
-		alert( "success!!: ");
-	});
+	$(document).on( 'click', '.price, .scrifice, .summon' , function(){
+		var dom = $(this);
+		dView.Status.move( dom[0].className, dom.find('.memo').text());});
 })
 
 $(window).on("load hashchange onpopstate", function(){
@@ -70,6 +70,9 @@ dView.Status.change = function(name){
 	if(stat) dView.Status.detail.update(stat);
 };
 
+dView.Status.move = function(mode, to){
+	console.log( mode + " " + to );
+};
 /*
  * }}}1 
  * class vSecretary
