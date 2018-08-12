@@ -98,8 +98,8 @@ dView[mode].show = function(a) {
 					s	+= "rare" + rareL + " rare" + rareR + priceClass,
 					s += '">';
 
-					s += dView.d2liBox(e.left);
-					s += dView.d2liBox(e.right);
+					s += dView.d2liBox(e.left, "summon");
+					s += dView.d2liBox(e.right, "summon");
 					s += dView.p2liBox(e.price, rareTarget);
 					s += "</ul>";
 				}

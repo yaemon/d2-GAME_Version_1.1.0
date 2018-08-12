@@ -10,9 +10,10 @@
 
 dView.priceFormat = new Intl.NumberFormat('en-US');
 
-dView.d2liBox = function(a, b){
-  var b = typeof b !== 'undefined' ?  b : "";
-	return '<li><span class="result-name">' + b + a.name + '</span>' +
+dView.d2liBox = function(a, b, c){
+  var c = typeof c !== 'undefined' ?  c : "";
+	return '<li class ="' + b + '"><span class="result-name">' 
+		+ c + a.name + '</span>' +
 		'<div class="result-item"><img src="' + a.img + '" alt=""/>' + 
 		'<span class="result-rare">' + a.rare + '</span>' +
 		'<span class="result-grade">Grade <span class="result-grade-num">' +

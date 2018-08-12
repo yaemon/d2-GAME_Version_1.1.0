@@ -78,8 +78,8 @@ dView[mode].show = function(a) {
 					s	+= "with" + rareSecond + " get" + rareSummon,
 					s += '">';
 
-					s += dView.d2liBox(e.second, "+");
-					s += dView.d2liBox(e.summon, "=");
+					s += dView.d2liBox(e.second, "summon", "+");
+					s += dView.d2liBox(e.summon, "scrifice", "=");
 					s += dView.p2liBox(e.price, rareSummon);
 					s += "</ul>";
 				}

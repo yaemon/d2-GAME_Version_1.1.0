@@ -405,6 +405,9 @@
     #result ul li:nth-child(even){
         margin-left:10px
     }
+    .summon , .scrifice{
+        cursor:pointer
+    }
     .price{
         display:block;
         // margin-bottom:.75em;
@@ -533,6 +536,9 @@
             margin-bottom:.4em;
             padding-right:10px;
             padding-left:10px
+        }
+        .price{
+          display:none;    
         }
         #result article{
             justify-content:center;
