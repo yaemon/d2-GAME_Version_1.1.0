@@ -7,37 +7,49 @@
  *
  */
 
-const dView = {};
-dView.showFlags = [
+var mode = "summon";
+/* One point memo:
+ var IncludeFile = (function() {
+    if (document.currentScript) {
+        return document.currentScript.src;
+    } else {
+        var scripts = document.getElementsByTagName('script'),
+        script = scripts[scripts.length-1];
+        if (script.src) {
+            return script.src;
+        }
+    }
+})();
+*/
+dView[mode] = {};
+dView.Status.disp[mode] =[
 	"pStd", "pHalf", "pMax", 
 	"rare1", "rare2", "rare3", "rare4", "rare5",
 ];
 
-dView.show = function(a) {
+dView[mode].show = function(a) {
 	var s;
-	var r = {"name":"", "no":0, "hideCondition":false};
+	var stat = {"name":"", "no":0, "mode":mode, "titile":""};
 	if (null == a){
-		document.title = "〇〇を作るには";
-		history.replaceState("", "", location.hash="");
-		return r;
+		stat.title = "〇〇を作るには";
+		return null;
 	}
 	if (null != a.notFound){
-		document.title = a.notFound + " が分かりません";
-		history.replaceState("", "", location.hash="#NotFound");
-		return r;
+		stat.title = a.notFound + " が分かりません";
+		return null;
 	}
-	r = {"name":a.detail.name, "no":a.detail.no, "hideCondition":false};
+	stat = {"name":a.detail.name, "no":a.detail.no, "titile":"", "hide":false};
 	if (null == a.race.comb){
-		r.hideCondition = true;
+		stat.hide = true;
 		if (null == a.detail.union){
-			document.title = a.detail.name + " は作れません"
+			stat.title = a.detail.name + " は作れません"
 			s = "<h2>未実装</h2>",
 			s += '<div id = "message">',
 			s	+= "<p>" + a.race.type + "を合体で作成する方法は提供されていません</p>",
 			s += '</div>';
 		}
 		else{
-			document.title = a.detail.name + "を作るには";
+			stat.title = a.detail.name + "を作るには";
 			s = "<h2>検索結果</h2>";
 			s += "<article><h3>" +  "多身<br /><br />　合体" + "</h3>";
 			s += '<ul>';
@@ -51,7 +63,7 @@ dView.show = function(a) {
 	}
 	else
 	{
-		document.title = a.detail.name + "を作るには";
+		stat.title = a.detail.name + "を作るには";
 		s = "<h2>検索結果</h2>";
 		var lesser = (a.rank == 0) ? 0 : a.race.list[a.rank -1].grade;
 		var rareTarget = a.detail.rare.length;
@@ -104,6 +116,6 @@ dView.show = function(a) {
 	$("#result").html(s);
 	$("#info-prop li").each(function(b){$("span", this).html(a.detail.prop[b]) })
 
-	return r;
+	return stat;
 };
 // vim:ts=4:sw=4:tw=78:fenc=utf-8:ff=unix:ft=javascript:noexpandtab:nolist

@@ -6,12 +6,13 @@
  * Released under the MIT license
  *
  */
-const dView = {};
-dView.showFlags = [
+
+var mode = "scrifice";
+dView.Status.disp[mode] = [
 	"rare1", "rare2", "rare3", "rare4", "rare5",
 	"get1", "get2", "get3", "get4", "get5",
 ];
-dView.show = function(a) {
+dView[mode].show = function(a) {
 	var s;
 	if (null == a){
 		document.title = "〇〇は何の素材になるか";
@@ -87,7 +88,6 @@ dView.show = function(a) {
 		}
 	}
 
-	history.replaceState("", "", "#no" + a.detail.no);
 	$("#info-ic").html('<img src="' + a.detail.img + '" alt="">');
 	$("#info-name span").text(a.detail.name);
 	$("#info-grade span").text(a.detail.grade);
