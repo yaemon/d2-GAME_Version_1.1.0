@@ -29,14 +29,14 @@ dView.Status.disp[mode] =[
 
 dView[mode].show = function(a) {
 	var s;
-	var stat = {"name":"", "no":0, "mode":mode, "titile":""};
+	var stat = {"name":"", "no":0, "mode":mode, "titile":"", "hide":false};
 	if (null == a){
 		stat.title = "〇〇を作るには";
-		return null;
+		return stat;
 	}
 	if (null != a.notFound){
 		stat.title = a.notFound + " が分かりません";
-		return null;
+		return stat;
 	}
 	stat = {"name":a.detail.name, "no":a.detail.no, "titile":"", "hide":false};
 	if (null == a.race.comb){

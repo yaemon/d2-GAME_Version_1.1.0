@@ -8,29 +8,29 @@
  */
 
 var mode = "scrifice";
+dView[mode] = {};
 dView.Status.disp[mode] = [
-	"rare1", "rare2", "rare3", "rare4", "rare5",
+	"with1", "with2", "with3", "with4", "with5",
 	"get1", "get2", "get3", "get4", "get5",
 ];
 dView[mode].show = function(a) {
 	var s;
+	var stat = {"name":"", "no":0, "mode":mode, "titile":"", "hide":false};
 	if (null == a){
-		document.title = "〇〇は何の素材になるか";
-		history.replaceState("", "", location.hash="");
+		stat.title = "〇〇は何の素材になるか";
 		return "";
 	}
 	if (null != a.notFound){
-		document.title = a.notFound + " が分かりません";
-		history.replaceState("", "", location.hash="#NotFound");
+		stat.title = a.notFound + " が分かりません";
 		return "";
 	}
+	stat = {"name":a.detail.name, "no":a.detail.no, "titile":"", "hide":false};
 	if (null == a.race.comb){
 		document.title = a.detail.name + " は二身合体に使えません";
 		s = "<h2>未実装</h2>",
 		s += '<div id = "message">',
 		s += '<p>' + a.race.type + "は素材になりません</p>",
 		s += '</div>';
-		dView.Conditions.Hide();
 	}
 	else
 	{
@@ -75,7 +75,7 @@ dView[mode].show = function(a) {
 					var rareSummon = e.summon.rare.length;
 
 					s += '<ul class="',
-					s	+= "rare" + rareSecond + " get" + rareSummon,
+					s	+= "with" + rareSecond + " get" + rareSummon,
 					s += '">';
 
 					s += dView.d2liBox(e.second, "+");
@@ -96,6 +96,6 @@ dView[mode].show = function(a) {
 	$("#result").html(s);
 	$("#info-prop li").each(function(b){$("span", this).html(a.detail.prop[b]) });
 
-	return a.detail.name;
+	return stat;
 }
 // vim:ts=4:sw=4:tw=78:fenc=utf-8:ff=unix:ft=javascript:noexpandtab:nolist

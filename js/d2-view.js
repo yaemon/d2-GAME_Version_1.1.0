@@ -92,6 +92,7 @@ function vSecretary(mode){
 		window.history.pushState(this.attash(), document.title, this.toHash());
 		document.title = a.title
 		this.showHide("search-remove", a.hide);
+		this.viewOf();
 	};
 	this.toHash = function(){ // toHash() <-> fromHash()
 		var s = "#mode="+mode;
@@ -131,7 +132,6 @@ function vSecretary(mode){
 		this.restore([mode, no]);
 		window.history.pushState(this.attash(), document.title, this.toHash());
 	};
-
 	this.restore = function(seed){
 		if (this.mode != seed[0]) this.modeChange(seed[0]);
 		if (this.no != seed[1]){
@@ -142,6 +142,9 @@ function vSecretary(mode){
 			this.no = stat.no;
 			$("#search").val(stat.name);
 		}
+		this.viewOf();
+	};
+	this.viewOf = function(){
 		if (this.history_[this.no])
 		{
 			var change = this.hidden.compare(this.history_[this.no])
@@ -151,6 +154,7 @@ function vSecretary(mode){
 			}
 		}
 	};
+
 	this.modeChange = function(){
 	};
 }

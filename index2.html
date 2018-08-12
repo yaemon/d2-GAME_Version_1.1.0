@@ -21,11 +21,11 @@ crossorigin="anonymous"></script>
 <script src ="./lib/jquery-ui.min.js"></script>
 
 <script src="js/church-interfaces.js"></script>
-<script src="js/church-price.js"></script>
 <script src="js/church-data.js"></script>
+<script src="js/church-price.js"></script>
+<script src="js/d2-view.js"></script>
 <script src="js/scrifice-search.js"></script>
 <script src="js/daemon-disp.js"></script>
-<script src="js/d2-view.js"></script>
 <header>
 	<h1>「〇〇は何の素材になるか」(Dx2 v1.3.0 対応)</h1>
 	<nav>
@@ -48,26 +48,26 @@ crossorigin="anonymous"></script>
 		<li id="info-rare">Rare :<span>&nbsp;</span></li>
 	</ul>
 	<div id="search-howto"><img src="img/ic-howto.png" alt=""></div>
-	<div id="search-remove">
-		<p>除外したい素材 :</p>
-		<ul>
-			<li><input type="checkbox" id="rare1"><label for="rare1">★1</label></li>
-			<li><input type="checkbox" id="rare2"><label for="rare2">★2</label></li>
-			<li><input type="checkbox" id="rare3"><label for="rare3">★3</label></li>
-			<li><input type="checkbox" id="rare4"><label for="rare4">★4</label></li>
-			<li><input type="checkbox" id="rare5"><label for="rare5">★5</label></li>
-		</ul>
-	</div>
-	<div id="search-remove">
-		<p>除外したい結果 :</p>
-		<ul>
+	<dl class="search-remove">
+		<dt>除外したい素材</dt>
+    <dd><ul>
+			<li><input type="checkbox" id="with1"><label for="with1">★1</label></li>
+			<li><input type="checkbox" id="with2"><label for="with2">★2</label></li>
+			<li><input type="checkbox" id="with3"><label for="with3">★3</label></li>
+			<li><input type="checkbox" id="with4"><label for="with4">★4</label></li>
+			<li><input type="checkbox" id="with5"><label for="with5">★5</label></li>
+    </ul></dd>
+  </dl>
+	<dl class="search-remove">
+		<dt>除外したい結果</dt>
+    <dd><ul>
 			<li><input type="checkbox" id="get1"><label for="get1">★1</label></li>
 			<li><input type="checkbox" id="get2"><label for="get2">★2</label></li>
 			<li><input type="checkbox" id="get3"><label for="get3">★3</label></li>
 			<li><input type="checkbox" id="get4"><label for="get4">★4</label></li>
 			<li><input type="checkbox" id="get5"><label for="get5">★5</label></li>
-		</ul>
-	</div>
+      </ul></dd>
+	</dl>
 </div>
 
 <section id="result">
