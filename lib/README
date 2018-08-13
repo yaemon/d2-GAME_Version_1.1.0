@@ -1,3 +1,6 @@
+* jquery-ui.min.js
 Minimum jQuery-ui for autocomplete (latest at 2018-05-13)
-
 download from http://jqueryui.com/download/ by yaemon.
+
+* booleanArray.js
+Boolean Array. うっかり自作. たぶん車輪の際発明 (2018-08-12, yaemon)
