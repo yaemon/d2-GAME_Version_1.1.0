@@ -5,7 +5,6 @@
  * Copyright r-jp, yaemon.
  * Released under the MIT license
  *
- * $Date:$
  */
 const church = {};
 
