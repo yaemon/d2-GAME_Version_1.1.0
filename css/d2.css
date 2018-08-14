@@ -541,21 +541,20 @@
             padding-right:10px;
             padding-left:10px
         }
-        .price{
-          display:none;    
-        }
         #result article{
             justify-content:center;
             padding-right:70px
         }
-        #result .sozai-search li{
-            min-width:115px;
-            max-width:115px
+      #result ul{
+          margin-left:25px;
+      }
+        #result li{
+           /* min-width: 105; */
+            max-width: 105px;
         }
-        #result .sozai-search li:nth-child(1){
-            left:-131px;
-            min-width:114px;
-            max-width:114px
+        #result li:last-child {
+            min-width: 30px;
+            max-width: 30px;
         }
     }
     @media(min-width:1921px){
