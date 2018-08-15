@@ -405,9 +405,11 @@
     #result ul li:nth-child(even){
         margin-left:10px
     }
+    /*
     .summon , .scrifice{
         cursor:pointer
     }
+    */
     .price{
         display:block;
         // margin-bottom:.75em;
@@ -417,7 +419,7 @@
         color:#fff;
         // font-size:var(--font12);
         text-align:center;
-        cursor:pointer;
+      /*  cursor:pointer; */
     }
 		.memo{
 			display:none;
