@@ -35,11 +35,6 @@ $(window).one("load", function(){
 		"" != search.val() && dView.Status.change(search.val());
 	});
 
-	/*
-	$(document).on( 'click', '.price, .scrifice, .summon' , function(){
-		var dom = $(this);
-		dView.Status.move( dom[0].className, dom.find('.memo').text());});
-	*/
 })
 
 $(window).on("load hashchange onpopstate", function(){
@@ -52,6 +47,9 @@ $(function(){
 	$("#search").focus();
 });
 	
+$(document).on( 'click', '.price, .scrifice, .summon' , function(){
+		var dom = $(this);
+		dView.Status.move( dom[0].className, dom.find('.memo').text());});
 /* }}}1 
  * dView.Status
  *  {{{1
