@@ -34,7 +34,6 @@ $(window).one("load", function(){
 	$("#search-btn").click(function(){
 		"" != search.val() && dView.Status.change(search.val());
 	});
-
 })
 
 $(window).on("load hashchange onpopstate", function(){
@@ -47,9 +46,18 @@ $(function(){
 	$("#search").focus();
 });
 	
-$(document).on( 'click', '.price, .scrifice, .summon' , function(){
+$(document).on( 'ready' ,  function(){ 
+	$("#search").focus();
+}).on( 'click', '.scrifice, .summon' , function(){
 		var dom = $(this);
-		dView.Status.move( dom[0].className, dom.find('.memo').text());});
+		dView.Status.move( dom[0].className, dom.find('.memo').text());
+}).on( 'click', '.price' , function(){
+		var dom = $(this);
+		dView.Status.move( dom[0].className, dom.find('.memo').text());
+}).on( 'mouseenter mouseleave', '.scrifice, .summon' , function(){
+			$( this ).toggleClass( "ui-state-hover" );
+});
+
 /* }}}1 
  * dView.Status
  *  {{{1
