@@ -20,6 +20,8 @@ $(window).one("load", function(){
 	church.init();
 	dView.Status.init();
 
+ 	$("head").append("<style></style>");
+
 	$('input[type="checkbox"]').change(function(){
  		dView.Status.detail.showHide(
 			$(this).attr("id"), $(this).prop("checked") );
@@ -109,12 +111,13 @@ function vSecretary(mode){
 		{
 			if (!val){
 				this.hidden.toggle(attr, false);
-				$("." + attr).show();
+				var c = "." + attr + "{display:none !important}";
+				$("head style").html($("head style").html().replace(c, ""));
 				this.history_[this.no] = this.hidden.bin();
 			}
 		}else if (val){
 				this.hidden.toggle(attr, true);
-				$("." + attr).hide();
+				$("head style").append("." + attr + "{display:none !important}");
 				this.history_[this.no] = this.hidden.bin();
 		}
 	};
