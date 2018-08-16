@@ -34,7 +34,7 @@ dView[mode].show = function(a) {
 	}
 	else
 	{
-		document.title = a.detail.name + "は何の素材になるか";
+		stat.title = a.detail.name + "は何の素材になるか";
 		s = "<h2>検索結果</h2>";
 		var rList = [];
 		var rareTarget = a.detail.rare.length;
