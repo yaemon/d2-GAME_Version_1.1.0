@@ -39,13 +39,8 @@ $(window).one("load", function(){
 $(window).on("load hashchange onpopstate", function(){
 	if (history.state)dView.Status.detail.restore(history.state)
 	else dView.Status.detail.fromHash(location.hash);
-	$("#search").focus();
 })
 
-$(function(){
-	$("#search").focus();
-});
-	
 $(document).on( 'ready' ,  function(){ 
 	$("#search").focus();
 }).on( 'click', '.scrifice, .summon' , function(){

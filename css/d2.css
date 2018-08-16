@@ -402,7 +402,7 @@
         font-size:var(--font12);
         text-align:center
     }
-    #result ul li:nth-child(even){
+    #result ul li:nth-child(2){
         margin-left:10px
     }
     .summon , .scrifice{
@@ -410,14 +410,10 @@
     }
     .price{
         display:block;
-        // margin-bottom:.75em;
-        padding:2px 5px;
-        padding:2px 5px 4px 10px;
-       // background:rgba(0,0,0,.4);
+        padding:8px 0px 2px 15px;
         color:#fff;
-        // font-size:var(--font12);
-        text-align:center;
-        cursor:pointer;
+        text-align:left;
+        // cursor:pointer;
     }
 		.memo{
 			display:none;
@@ -552,9 +548,10 @@
            /* min-width: 105; */
             max-width: 105px;
         }
-        #result li:last-child {
-            min-width: 30px;
-            max-width: 30px;
+         #result li:last-child { 
+            min-width: 42px;
+            max-width: 42px;
+            font-size:var(--font13)
         }
     }
     @media(min-width:1921px){
