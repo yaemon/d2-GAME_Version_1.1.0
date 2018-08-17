@@ -669,7 +669,7 @@ church.data = [
 		"list": [
 			{"name": "ホワイトライダー", "grade": 74, "rare": "★★★★", "img": "img/howaitoraida.png", "no": 150, 
 				"prop":["-", "-", "-", "吸", "弱 / 無(防魔)", "耐", "耐"]},
- 			{"name": "ヘルズライダー", "grade": 77, "rare": "★★★★★", "img": "img/HellsRider.png", "no": 181,
+ 			{"name": "ヘルズエンジェル", "grade": 77, "rare": "★★★★★", "img": "img/HellsAngel.png", "no": 181,
 				"prop":["-", "反", "-", "-", "耐",  "弱 / 反(防魔)", "-"]},
 			{"name": "アリス", "grade": 89, "rare": "★★★★★", "img": "img/arisu.png", "no": 151, 
 				"prop":["-", "-", "-", "-", "-", "弱 / 反(防魔)", "反"]},
