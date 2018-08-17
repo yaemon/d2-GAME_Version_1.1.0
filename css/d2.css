@@ -354,7 +354,7 @@
         border-right:none;
         background:rgba(255,255,255,.1)
     }
-    #result .sozai-search li:nth-child(even){
+    #result .sozai-search li:nth-child(2){
         margin-left:0
     }
     .result-item{
@@ -414,21 +414,7 @@
         color:#fff;
         text-align:left;
         // cursor:pointer;
-    }
-		.memo{
-			display:none;
-		}
-    #message{
-        display:flex;
-        align-items:center;
-        justify-content:center;
-        margin-top:15px
-    }
-    #message p{
-        margin:0 15px 0 0;
-        color:#fff
-    }
-    footer{
+
         display:flex;
         justify-content:center;
         padding:20px 0;
@@ -548,7 +534,7 @@
            /* min-width: 105; */
             max-width: 105px;
         }
-         #result li:last-child { 
+         #result li:last-child {
             min-width: 42px;
             max-width: 42px;
             font-size:var(--font13)
