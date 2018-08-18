@@ -99,7 +99,7 @@ function vSecretary(mode){
 		window.history.pushState(this.attash(), document.title, this.toHash());
 		document.title = a.title
 		this.showHide("search-remove", a.hide);
-		this.viewOf();
+		this.selectForDaemon();
 	};
 	this.toHash = function(){ // toHash() <-> fromHash()
 		var s = "#mode="+mode;
@@ -129,7 +129,7 @@ function vSecretary(mode){
 	};
 
 	this.fromHash = function(hash){
-		var no, mode;
+		var no = null, mode = null;
 		if (!hash || ""==hash){ return;}
 		hash.split('#').forEach(function(t){
 			var u = t.split('=');
@@ -140,18 +140,18 @@ function vSecretary(mode){
 		window.history.pushState(this.attash(), document.title, this.toHash());
 	};
 	this.restore = function(seed){
-		if (this.mode != seed[0]) this.modeChange(seed[0]);
-		if (this.no != seed[1]){
-			var stat = dView[mode].show(church.searchDaemonByNumber(seed[1]));
+		if (seed[0] && this.mode != seed[0]) this.modeChange(seed[0]);
+		if (seed[1] && this.no != seed[1]){
+			let stat = dView[mode].show(church.searchDaemonByNumber(seed[1]));
 			if (!stat){return false;}
 			this.showHide("search-remove", stat.hide);
 			this.name = stat.name;
 			this.no = stat.no;
 			$("#search").val(stat.name);
 		}
-		this.viewOf();
+		this.selectForDaemon();
 	};
-	this.viewOf = function(){
+	this.selectForDaemon= function(){
 		if (this.history_[this.no])
 		{
 			var change = this.hidden.compare(this.history_[this.no])
