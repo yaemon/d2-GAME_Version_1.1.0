@@ -414,7 +414,21 @@
         color:#fff;
         text-align:left;
         // cursor:pointer;
-
+    }
+    .memo{
+        display:none;
+    }
+    #message{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        margin-top:15px
+    }
+    #message p{
+        margin:0 15px 0 0;
+        color:#fff
+    }
+    footer{
         display:flex;
         justify-content:center;
         padding:20px 0;
