@@ -1,10 +1,11 @@
-church.version = 
-	{
+church.version = function(){
+	return {
 		"Last modified" : "2018-08-13",
 		"Last maintainer" : "yaemon",
 		"Game Version" : "1.4.1 (ザオウゴンゲン実装)",
 		"OneLiner" : "(Game Version 1.4.1 対応)", // 検索画面に表示される
 	};
+};
 
 church.data = [
 	{
@@ -748,5 +749,5 @@ church.data = [
 				"price":500000},
 		],
 	},
-]
+];
 // vim:ts=4:sw=4:tw=78:fenc=utf-8:ff=unix:ft=javascript:noexpandtab:nolist

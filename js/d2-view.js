@@ -19,6 +19,7 @@ $(window).one("load", function(){
 	dView.setAutoComplete();
 	church.init();
 	dView.Status.init();
+	console.log( 'load func done');
 
  	$("head").append("<style></style>");
 
@@ -27,7 +28,7 @@ $(window).one("load", function(){
 			$(this).attr("id"), $(this).prop("checked") );
 	});
 
-	var search = $("#search");
+	const search = $("#search");
 	search.keypress(function(i){
 		13 == i.which && "" != search.val() && dView.Status.change(search.val());
    });
@@ -44,9 +45,11 @@ $(window).on("load hashchange onpopstate", function(){
 $(document).on( 'ready' ,  function(){ 
 	$("#search").focus();
 }).on( 'click', '.scrifice, .summon' , function(){
-		var dom = $(this);
-		dView.Status.move( dom[0].className, dom.find('.memo').text());
+		// const dom = $(this);
+		// dView.Status.move( dom[0].className, dom.find('.memo').text());
+		dView.Status.move( $(this)[0].className, $(this).find('.memo').text());
 }).on( 'click', '.price' , function(){
+		// 同上
 		var dom = $(this);
 		dView.Status.move( dom[0].className, dom.find('.memo').text());
 }).on( 'mouseenter mouseleave', '.scrifice, .summon' , function(){
@@ -60,7 +63,7 @@ $(document).on( 'ready' ,  function(){
 
 dView.Status.init = function(){
 	dView.Status.detail = new vSecretary(mode);
-	$("#copyright").append ( " " +  church.version.OneLiner );
+	$("#copyright").append ( " " +  church.version().OneLiner );
 };
 
 dView.Status.flags = function(){
@@ -70,6 +73,7 @@ dView.Status.flags = function(){
 dView.Status.change = function(name){
 	if(dView.Status.detail.target() == name)return;
 	dView.clean();
+	// 最終的には一行に戻す
 	var stat = dView[mode].show(church.searchDaemonByName(name));
 	if(stat) dView.Status.detail.update(stat);
 };
@@ -114,7 +118,7 @@ function vSecretary(mode){
 		{
 			if (!val){
 				this.hidden.toggle(attr, false);
-				var c = "." + attr + "{display:none !important}";
+				const c = "." + attr + "{display:none !important}";
 				$("head style").html($("head style").html().replace(c, ""));
 				this.history_[this.no] = this.hidden.bin();
 			}
@@ -132,7 +136,8 @@ function vSecretary(mode){
 		var no = null, mode = null;
 		if (!hash || ""==hash){ return;}
 		hash.split('#').forEach(function(t){
-			var u = t.split('=');
+			const u = t.split('=');
+			// switch(u[0]){
 			if('no'==u[0]) no = u[1];
 			else if('mode'==u[0]) mode = u[1];
 		});
@@ -154,8 +159,8 @@ function vSecretary(mode){
 	this.selectForDaemon= function(){
 		if (this.history_[this.no])
 		{
-			var change = this.hidden.compare(this.history_[this.no])
-			for(let attr in change){
+			const change = this.hidden.compare(this.history_[this.no])
+			for(const attr in change){
 				this.showHide(attr, change[attr]);
 				this.withButton_(attr, change[attr]);
 			}

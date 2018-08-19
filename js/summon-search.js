@@ -28,8 +28,8 @@ dView.Status.disp[mode] =[
 ];
 
 dView[mode].show = function(a) {
-	var s;
-	var stat = {"name":"", "no":0, "mode":mode, "titile":"", "hide":false};
+	let s;
+	let stat = {"name":"", "no":0, "mode":mode, "titile":"", "hide":false};
 	if (null == a){
 		stat.title = "〇〇を作るには";
 		return stat;
