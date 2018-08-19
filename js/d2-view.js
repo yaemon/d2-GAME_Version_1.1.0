@@ -20,7 +20,6 @@ $(window).one("load", function(){
 	dView.setAutoComplete();
 	church.init();
 	dView.Status.init();
-	console.log( 'load func done');
 
  	$("head").append("<style></style>");
 
@@ -41,19 +40,20 @@ $(window).one("load", function(){
 $(window).on("load hashchange onpopstate", function(){
 	if (history.state)dView.Status.detail.restore(history.state)
 	else dView.Status.detail.fromHash(location.hash);
+	$("#search").focus();
 })
 
-$(document).on( 'ready' ,  function(){ 
+$(document).on('ready', function(){ 
 	$("#search").focus();
-}).on( 'click', '.scrifice, .summon' , function(){
+}).on('click', '.scrifice, .summon', function(){
 		// const dom = $(this);
 		// dView.Status.move( dom[0].className, dom.find('.memo').text());
 		dView.Status.move( $(this)[0].className, $(this).find('.memo').text());
-}).on( 'click', '.price' , function(){
+}).on('click', '.price', function(){
 		// 同上
 		var dom = $(this);
 		dView.Status.move( dom[0].className, dom.find('.memo').text());
-}).on( 'mouseenter mouseleave', '.scrifice, .summon' , function(){
+}).on( 'mouseenter mouseleave', '.scrifice, .summon', function(){
 			$( this ).toggleClass( "ui-state-hover" );
 });
 
@@ -94,83 +94,92 @@ function vSecretary(mode){
 	this.name = "";
 	this.hidden = new bArray(dView.Status.flags());
 	this.history_ = {};
-
-	this.target = function(){
-		return this.name;
-	};
-	this.update = function(a){
-		this.no = a.no;
-		this.name = a.name;
-		window.history.pushState(this.attash(), document.title, this.toHash());
-		document.title = a.title
-		this.showHide("search-remove", a.hide);
-		this.selectForDaemon();
-	};
-	this.toHash = function(){ // toHash() <-> fromHash()
-		var s = "#mode="+mode;
-		if (0 != this.no) s+= "#no=" + this.no;
-		return s;
-	};
-	this.attash = function(){		// attash() <-> restore()
-		return [this.mode, this.no];
-	};
-	this.showHide = function(attr, val){
-		if(this.hidden.check(attr))
-		{
-			if (!val){
-				this.hidden.toggle(attr, false);
-				const c = "." + attr + "{display:none !important}";
-				$("head style").html($("head style").html().replace(c, ""));
-				this.history_[this.no] = this.hidden.bin();
-			}
-		}else if (val){
-				this.hidden.toggle(attr, true);
-				$("head style").append("." + attr + "{display:none !important}");
-				this.history_[this.no] = this.hidden.bin();
-		}
-	};
-	this.withButton_ = function(attr, val){
-			$( '#' + attr).prop('checked' , val);
-	};
-
-	this.fromHash = function(hash){
-		var no = null, mode = null;
-		if (!hash || ""==hash){ return;}
-		hash.split('#').forEach(function(t){
-			const u = t.split('=');
-			// switch(u[0]){
-			if('no'==u[0]) no = u[1];
-			else if('mode'==u[0]) mode = u[1];
-		});
-		this.restore([mode, no]);
-		window.history.pushState(this.attash(), document.title, this.toHash());
-	};
-	this.restore = function(seed){
-		if (seed[0] && this.mode != seed[0]) this.modeChange(seed[0]);
-		if (seed[1] && this.no != seed[1]){
-			let stat = dView[mode].show(church.searchDaemonByNumber(seed[1]));
-			if (!stat){return false;}
-			this.showHide("search-remove", stat.hide);
-			this.name = stat.name;
-			this.no = stat.no;
-			$("#search").val(stat.name);
-		}
-		this.selectForDaemon();
-	};
-	this.selectForDaemon= function(){
-		if (this.history_[this.no])
-		{
-			const change = this.hidden.compare(this.history_[this.no])
-			for(const attr in change){
-				this.showHide(attr, change[attr]);
-				this.withButton_(attr, change[attr]);
-			}
-		}
-	};
-
-	this.modeChange = function(){
-	};
 }
+
+vSecretary.prototype.target = function(){
+	return this.name;
+};
+
+vSecretary.prototype.update = function(a){
+	this.no = a.no;
+	this.name = a.name;
+	window.history.pushState(this.attash(), document.title, this.toHash());
+	document.title = a.title
+	this.showHide("search-remove", a.hide);
+	this.selectForDaemon();
+};
+
+// on defact, vSecretary is like Singleton. note prototype :-)
+//
+vSecretary.prototype.toHash = function(){ // toHash() <-> fromHash()
+	var s = "#mode="+mode;
+	if (0 != this.no) s+= "#no=" + this.no;
+	return s;
+};
+
+vSecretary.prototype.attash = function(){		// attash() <-> restore()
+	return [this.mode, this.no];
+};
+
+vSecretary.prototype.showHide = function(attr, val){
+	if(this.hidden.check(attr))
+	{
+		if (!val){
+			this.hidden.toggle(attr, false);
+			const c = "." + attr + "{display:none !important}";
+			$("head style").html($("head style").html().replace(c, ""));
+			this.history_[this.no] = this.hidden.bin();
+		}
+	}else if (val){
+			this.hidden.toggle(attr, true);
+			$("head style").append("." + attr + "{display:none !important}");
+			this.history_[this.no] = this.hidden.bin();
+	}
+};
+
+vSecretary.prototype.withButton_ = function(attr, val){
+		$( '#' + attr).prop('checked' , val);
+};
+
+vSecretary.prototype.fromHash = function(hash){
+	var no = null, mode = null;
+	if (!hash || ""==hash){ return;}
+	hash.split('#').forEach(function(t){
+		const u = t.split('=');
+		// switch(u[0]){
+		if('no'==u[0]) no = u[1];
+		else if('mode'==u[0]) mode = u[1];
+	});
+	this.restore([mode, no]);
+	window.history.pushState(this.attash(), document.title, this.toHash());
+};
+
+vSecretary.prototype.restore = function(seed){
+	if (seed[0] && this.mode != seed[0]) this.modeChange(seed[0]);
+	if (seed[1] && this.no != seed[1]){
+		let stat = dView[mode].show(church.searchDaemonByNumber(seed[1]));
+		if (!stat){return false;}
+		this.showHide("search-remove", stat.hide);
+		this.name = stat.name;
+		this.no = stat.no;
+		$("#search").val(stat.name);
+	}
+	this.selectForDaemon();
+};
+
+vSecretary.prototype.selectForDaemon= function(){
+	if (this.history_[this.no])
+	{
+		const change = this.hidden.compare(this.history_[this.no])
+		for(const attr in change){
+			this.showHide(attr, change[attr]);
+			this.withButton_(attr, change[attr]);
+		}
+	}
+};
+
+vSecretary.prototype.modeChange = function(){
+};
 /* 
  * }}}1 
  * tools
