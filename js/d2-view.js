@@ -6,6 +6,7 @@
  * Released under the MIT license
  *
  */
+'use strict';
 const dView = {};
 dView.Status = {
 	"disp":{"common":["search-remove", "price"]},

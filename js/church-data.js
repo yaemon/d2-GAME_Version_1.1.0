@@ -1,3 +1,4 @@
+'use strict';
 church.version = function(){
 	return {
 		"Last modified" : "2018-08-13",
@@ -7,6 +8,11 @@ church.version = function(){
 	};
 };
 
+/*
+ *
+ * main data :
+ *
+ */
 church.data = [
 	{
 		"type": "大天使",

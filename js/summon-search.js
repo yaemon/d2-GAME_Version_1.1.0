@@ -6,6 +6,7 @@
  * Released under the MIT license
  *
  */
+'use strict';
 
 var mode = "summon";
 /* One point memo:
